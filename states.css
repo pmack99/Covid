@@ -43,6 +43,7 @@ p {
   font-size: 2rem;
   padding-bottom: 1rem;
   padding-top: 1rem;
+  margin-top: 1px;
 }
 
 .card-title {
@@ -50,7 +51,7 @@ p {
 }
 
 .card-body {
-  height: 55rem;
+  height: auto;
 }
 
 .x {

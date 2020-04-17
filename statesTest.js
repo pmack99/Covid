@@ -22,8 +22,10 @@ let totalTestResults2 = document.getElementById('totalTestResults2')
 let lastUpdateEt2 = document.getElementById('lastUpdateEt2')
 
 var selectedState
+var selectedState2
 
 myFunction()
+myFunction2()
 
 function myFunction() {
   var e = document.getElementById('selectState')
