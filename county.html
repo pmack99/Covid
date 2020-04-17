@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='county.css'>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Poppins&display=swap" rel="stylesheet"> 
+
+    <title>COVID-19 Data</title>
+  </head>
+  <body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                <a class="navbar-brand" href="#">COVID-19 Tracker </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="index.html">Home</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="usaDaily.html">US Daily</a>
+                      </li>
+  
+                    <li class="nav-item">
+                      <a class="nav-link" href="florida.html">Florida</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="county.html">Counties</a>
+                      </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="covid.html">What is it?</a>
+                    </li>
+
+                    <li class="nav-item">
+                      <a class="nav-link" href="about.html">About</a>
+                    </li>
+
+
+                  </ul>
+                </div>
+              </nav>
+
+
+
+<div class="container">
+
+    <label for="county">Choose a County:</label>
+
+    <select id="selectCounty" class="x">
+      <option value="ORANGE">Orange</option>
+      <option value="OSCEOLA">Osceola</option>
+      <option value="SEMINOLE">Seminole</option>
+      <option value="LAKE">Lake</option>
+      <option value="HILLSBOROUGH">Hillsborough</option>
+      <option value="DUVAL">Duval</option>
+      <option value="DADE">Dade</option>
+      <option value="BROWARD">Broward</option>
+      <option value="PALM BEACH">Palm Beach</option>
+      <option value="SARASOTA">Sarasota</option>
+      <option value="FLAGLER">Flagler</option>
+      <option value="ALACHUA">Alachua</option>
+      <option value="Baker">Baker</option>
+      <option value="BAY">Bay</option>
+      <option value="BRADFORD">Bradford</option>
+      <option value="CALHOUN">Calhoun</option>
+      <option value="CITRUS">Citrus</option>
+      <option value="CLAY">Clay</option>
+      <option value="DESOTO">DeSoto</option>
+      <option value="DIXIE">Dixie</option>
+      <option value="ESCAMBIA">Escambia</option>
+      <option value="FRANKLIN">Franklin</option>
+      <option value="GADSDEN">Gadsden</option>
+      <option value="GILCHRIST">Gilchrist</option>
+      <option value="GLADES">Glades</option>
+      <option value="GULF">Gulf</option>
+      <option value="HAMILTON">Hamilton</option>
+      <option value="HARDEE">Hardee</option>
+      <option value="HENDRY">Hendry</option>
+      <option value="HERNANDO">Hernando</option>
+      <option value="HIGHLANDS">Highlands</option>
+      <option value="HOLMES">Holmes</option>
+      <option value="INDIAN RIVER">Indian River</option>
+      <option value="JACKSON">Jackson</option>
+      <option value="JEFFERSON">Jefferson</option>
+      <option value="LAFAYETTE">Lafayette</option>
+      <option value="LEE">Lee</option>
+      <option value="LEON">Leon</option>
+      <option value="LEVY">Levy</option>
+      <option value="LIBERTY">Liberty</option>
+      <option value="FRANKLIN">Franklin</option>
+      <option value="MADISON">Madison</option>
+      <option value="MANATEE">Manatee</option>
+      <option value="MARION">Marion</option>
+      <option value="MARTIN">Martin</option>
+      <option value="MONROE">Monroe</option>
+      <option value="NASSAU">Nassau</option>
+      <option value="OKALOOSA">Okaloosa</option>
+      <option value="OKEECHOBEE">Okeechobee</option>
+      <option value="PASCO">Pasco</option>
+      <option value="PINELLAS">Pinellas</option>
+      <option value="POLK">Polk</option>
+      <option value="PUTNAM">Putnam</option>
+      <option value="ST. JOHNS">St Johns</option>
+      <option value="ST. LUCIE">St Lucie</option>
+      <option value="SANTA ROSA">Santa Rosa</option>
+      <option value="SUMPTER">Sumpter</option>
+      <option value="SUWANNEE">Suwannee</option>
+      <option value="TAYLOR">Taylor</option>
+      <option value="UNION">Union</option>
+      <option value="VOLUSIA">Volusia</option>
+      <option value="WAKULLA">Wakulla</option>
+      <option value="WALTON">Walton</option>
+      <option value="WASHINGTON">Washington</option>
+      
+    </select> 
+
+    <button type="button" class = "btn btn-outline-primary" onclick="myFunction()">DATA</button>
+</div>
+
+<div class="container">
+   
+</div>
+
+
+
+
+<div class="container">
+   
+
+  <div class="e text-danger">COVID-19: Cases by FL County</div>
+
+          <div class="card-columns">
+    
+
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <h5 class="card-title">County</h5>
+                        <p id="COUNTYNAME"> </p>      
+                        <hr>  
+                    <h5 class="card-title">Confirmed Cases</h5>
+                        <p id="CasesAll"></p>   
+                        
+                    <h5 class="card-title">Deaths</h5>
+                        <p id="Deaths"></p> 
+                    <h5 class="card-title">Total Tests</h5>
+                        <p id="T_total"> </p>       
+                     <h5 class="card-title">Positive Tests</h5>
+                        <p id="TPositive"></p>   
+                    <h5 class="card-title">Negative Tests</h5>
+                        <p id="TNegative"> </p> 
+                        <hr>  
+                    <h5 class="card-title">Median Age</h5>
+                        <p id="C_AgeMedian"> </p>       
+                    <h5 class="card-title">Age Range</h5>
+                        <p id="C_AgeRange"></p>   
+                  
+
+
+                </div>
+            </div>
+
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+                    <hr> 
+                <h5 class="card-title">+ Age 0-4</h5>
+                    <p id="C_Age_0_4"> </p>       
+                <h5 class="card-title">+ Age 5-14</h5>
+                    <p id="C_Age_5_14"></p>   
+                <h5 class="card-title">+ Age 15-24</h5>
+                        <p id="C_Age_15_24"> </p>       
+                <h5 class="card-title">+ Age 25-34</h5>
+                    <p id="C_Age_25_34"></p> 
+                    
+                 <h5 class="card-title">+ Age 35-44</h5>
+                            <p id="C_Age_35_44"> </p>       
+                <h5 class="card-title">+ Age 45-54</h5>
+                            <p id="C_Age_45_54"></p>   
+                <h5 class="card-title">+ Age 55-64</h5>
+                            <p id="C_Age_55_64"> </p>       
+                 <h5 class="card-title">+ Age 65-74</h5>
+                            <p id="C_Age_65_74"></p>  
+
+
+                </div>
+            </div>
+
+
+            <div class="card border-dark mb-3">
+                <div class="card-body">
+
+
+                <h5 class="card-title">+ Age 75-84</h5>
+                    <p id="C_Age_75_84"> </p>       
+                <h5 class="card-title">+ Age 85+</h5>
+                    <p id="C_Age_85plus"></p>  
+                    <hr> 
+                <h5 class="card-title">+ Male</h5>
+                    <p id="C_Male"> </p>       
+                <h5 class="card-title">+ Female</h5>
+                    <p id="C_Female"></p>  
+                <h5 class="card-title">+ White</h5>
+                        <p id="C_RaceWhite"> </p>       
+                <h5 class="card-title">+ Black</h5>
+                        <p id="C_RaceBlack"></p>   
+                <h5 class="card-title">+ Hispanic</h5>
+                        <p id="C_HispanicYES"> </p>       
+                <h5 class="card-title">+ Other</h5>
+                        <p id="C_RaceOther"></p>   
+             
+      
+
+
+
+                </div>
+            </div>
+
+
+</div>
+</div>
+
+
+<hr>
+
+
+</div>
+
+
+
+
+
+
+    <script src='datatest.js'></script>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+  </body>
+</html>

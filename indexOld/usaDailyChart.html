@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' type='text/css' media='screen' href='new.css'>
+    <script src= https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Poppins&display=swap" rel="stylesheet"> 
+
+    <title>USA COVID-19 Data</title>
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <a class="navbar-brand" href="#">COVID-19 Tracker </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+              <a class="nav-link" href="usaDaily.html">US Daily</a>
+            </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="florida.html">Florida</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="covid.html">What is it?</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+
+
+        </ul>
+      </div>
+    </nav>
+       
+
+<div class="jumbotron jumbotron-fluid">
+<h1 class="a text-danger">Covid charts by Date</h1>
+
+    <div class="chart container">
+        <canvas id="myChart"></canvas>
+
+       </div>
+          
+       
+</div>
+
+<hr>
+
+<div class="jumbotron jumbotron-fluid">
+
+<div class="chart container">
+
+    <canvas id="flChart"></canvas>
+   </div>
+   
+</div>
+
+</div>
+
+<hr>
+
+<div class="jumbotron jumbotron-fluid">
+
+<div class="chart container">
+
+    <canvas id="nyChart"></canvas>
+   </div>
+   
+</div>
+
+</div>
+
+
+ <!-- USA chart JS and data -->
+    <script src='statesdaily.js'></script>
+    <script>
+
+        let myChart = document.getElementById('myChart').getContext('2d');
+    
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 18 ;
+        Chart.defaults.global.defaultFontColor = 'white';
+    
+        let usaChart = new Chart(myChart, {
+          type: 'bar',
+             data:{
+             labels:['3/4', '3/5', '3/6', '3/7', '3/8','3/9', '3/10', '3/11', '3/12','3/13', '3/14', '3/15', '3/16', '3/17','3/18', '3/19', '3/20', '3/21', '3/22' , '3/23', '3/24', '3/25', '3/26', '3/27', '3/28', '3/29', '3/30', '3/31', '4/1', '4/2', '4/3', '4/4', '4/5', '4/6', '4/7'],
+             datasets:[{
+                 label: 'Positive',
+                 data: [
+    
+                    118,
+                    176,
+                    223,
+                    341,
+                    417,
+                    584,
+                    778,
+                    1053,
+                    1315,
+                    1922,
+                    2450,
+                    3173,
+                    4019,
+                    5723,
+                    7730,
+                    11719,
+                    17033,
+                    23197,
+                    31879,
+                    42152,
+                    51954,
+                    63928,
+                    80735,
+                    99447,
+                    118234,
+                    123313,
+                    139061,
+                    160530,
+                    184770,
+                    210770,
+                    239009,
+                    271915,
+                    305755,
+                    332308,
+                    361331,
+                    392594
+                 ],
+
+                 backgroundColor: 'grey',
+                 borderWidth:1,
+                 borderColor:'grey',
+                 hoverBorderWidth:'3',
+                 hoverBorderColor:'black"'
+    
+                }, {
+    
+                    label: 'Deaths',
+                    data: [
+    
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        27,
+                        36,
+                        39,
+                        49,
+                        60,
+                        71,
+                        90,
+                        112,
+                        160,
+                        219,
+                        272,
+                        398,
+                        471,
+                        675,
+                        900,
+                        1163,
+                        1530,
+                        2211,
+                        2428,
+                        2939,
+                        3746,
+                        4700,
+                        5784,
+                        6962,
+                        8314,
+                        9498,
+                        10680,
+                        12621
+                        ],
+                        type: 'line',
+    
+                 backgroundColor: 'red',
+                 borderWidth:3,
+                 borderColor:'white',
+                 hoverBorderWidth:'3',
+                 hoverBorderColor:'black'
+
+                }, {
+    
+                    label: 'Hospitalized',
+                    data: [
+
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        0,
+                        1964,
+                        2554,
+                        3325,
+                        4468,
+                        6136,
+                        10131,
+                        12036,
+                        16729,
+                        19730,
+                        22303,
+                        26660,
+                        31142,
+                        32649,
+                        35991,
+                        38402,
+                        41372,
+                        45168,
+                        45562
+                        ],
+                        type: 'line',
+
+                backgroundColor: 'blue',
+                borderWidth:3,
+                borderColor:'grey',
+                hoverBorderWidth:'3',
+                hoverBorderColor:'black'
+                                
+             }],
+            },
+            options: {
+                title: {
+                    display:true,
+                    text: 'USA COVID-19 cases',
+                    fontSize:25 
+                }
+            }
+    
+    
+        });
+    
+        </script>
+
+
+ <!-- FL chart JS and data -->
+<script>
+
+    let flChart = document.getElementById('flChart').getContext('2d');
+
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 18 ;
+    Chart.defaults.global.defaultFontColor = 'white';
+
+    let newChart = new Chart(flChart, {
+      type: 'bar',
+         data:{
+         labels:['3/4', '3/5', '3/6', '3/7', '3/8','3/9', '3/10', '3/11', '3/12','3/13', '3/14', '3/15', '3/16', '3/17','3/18', '3/19', '3/20', '3/21', '3/22' , '3/23', '3/24', '3/25', '3/26', '3/27', '3/28', '3/29', '3/30', '3/31', '4/1', '4/2', '4/3', '4/4', '4/5', '4/6', '4/7'],
+         datasets:[{
+             label: 'Positive',
+             data: [
+
+                2,
+                9,
+                9,
+                14,
+                17,
+                18,
+                19,
+                28,
+                32,
+                50,
+                77,
+                116,
+                141,
+                186,
+                314,
+                390,
+                520,
+                658,
+                830,
+                1171,
+                1412,
+                1682,
+                2355,
+                2765,
+                3763,
+                4246,
+                5473,
+                6338,
+                6955,
+                8010,
+                9585,
+                11111,
+                12151,
+                13324,
+                14747
+             ],
+
+             backgroundColor: 'grey',
+             borderWidth:1,
+             borderColor:'grey',
+             hoverBorderWidth:'3',
+             hoverBorderColor:'black"'
+
+            }, {
+
+                label: 'Deaths',
+                data: [
+
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    2,
+                    2,
+                    2,
+                    3,
+                    4,
+                    6,
+                    7,
+                    8,
+                    10,
+                    12,
+                    13,
+                    14,
+                    18,
+                    22,
+                    28,
+                    34,
+                    54,
+                    56,
+                    63,
+                    77,
+                    87,
+                    128,
+                    163,
+                    191,
+                    218,
+                    236,
+                    296
+                    ],
+                    type: 'line',
+
+             backgroundColor: 'red',
+             borderWidth:3,
+             borderColor:'white',
+             hoverBorderWidth:'3',
+             hoverBorderColor:'black"'
+
+
+            }, {
+
+            label: 'Hospitalized',
+            data: [
+
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                0,
+                158,
+                185,
+                217,
+                259,
+                316,
+                406,
+                456,
+                526,
+                594,
+                652,
+                823,
+                949,
+                1123,
+                1287,
+                1462,
+                1572,
+                1682,
+                1999
+                ],
+                type: 'line',
+
+            backgroundColor: 'blue',
+            borderWidth:3,
+            borderColor:'grey',
+            hoverBorderWidth:'3',
+            hoverBorderColor:'black"'
+                    }],
+        },
+        options: {
+            title: {
+                display:true,
+                text: 'FL COVID-19 cases',
+                fontSize:25 
+            }
+        }
+
+
+    });
+
+    </script>
+
+     <!-- NY chart JS and data -->
+<script>
+
+    let nyChart = document.getElementById('nyChart').getContext('2d');
+
+    Chart.defaults.global.defaultFontFamily = 'Lato';
+    Chart.defaults.global.defaultFontSize = 18 ;
+    Chart.defaults.global.defaultFontColor = 'white';
+
+    let newChart2 = new Chart(nyChart, {
+      type: 'bar',
+         data:{
+         labels:['3/4', '3/5', '3/6', '3/7', '3/8','3/9', '3/10', '3/11', '3/12','3/13', '3/14', '3/15', '3/16', '3/17','3/18', '3/19', '3/20', '3/21', '3/22' , '3/23', '3/24', '3/25', '3/26', '3/27', '3/28', '3/29', '3/30', '3/31', '4/1', '4/2', '4/3','4/4', '4/5', '4/6', '4/7'],
+         datasets:[{
+             label: 'Positive',
+             data: [
+
+                6,
+                22,
+                33,
+                76,
+                105,
+                142,
+                173,
+                216,
+                216,
+                421,
+                524,
+                729,
+                950,
+                1700,
+                2382,
+                4152,
+                7102,
+                10356,
+                15168,
+                20875,
+                25665,
+                30811,
+                37258,
+                44635,
+                52318,
+                59513,
+                66497,
+                75795,
+                83712,
+                92381,
+                102863,
+                113704,
+                122031,
+                130689,
+                138863
+             ],
+
+             backgroundColor: 'grey',
+             borderWidth:1,
+             borderColor:'grey',
+             hoverBorderWidth:'3',
+             hoverBorderColor:'black"'
+
+            }, {
+
+                label: 'Deaths',
+                data: [
+
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    3,
+                    7,
+                    7,
+                    12,
+                    12,
+                    35,
+                    44,
+                    114,
+                    114,
+                    210,
+                    285,
+                    385,
+                    519,
+                    728,
+                    965,
+                    1218,
+                    1550,
+                    1941,
+                    2373,
+                    2935,
+                    3565,
+                    4159,
+                    4758,
+                    5489
+                    ],
+                    type: 'line',
+
+             backgroundColor: 'red',
+             borderWidth:3,
+             borderColor:'white',
+             hoverBorderWidth:'3',
+             hoverBorderColor:'black"'
+
+            }, {
+
+                label: 'Hospitalized',
+                data: [
+
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    0,
+                    1603,
+                    1974,
+                    2635,
+                    3234,
+                    3805,
+                    6844,
+                    6844,
+                    10054,
+                    12075,
+                    12075,
+                    15904,
+                    18368,
+                    20817,
+                    23696,
+                    26383,
+                    28092,
+                    30203,
+                    32083
+                    ],
+                    type: 'line',
+
+                backgroundColor: 'blue',
+                borderWidth:3,
+                borderColor:'grey',
+                hoverBorderWidth:'3',
+                hoverBorderColor:'black"'
+         }],
+        },
+        options: {
+            title: {
+                display:true,
+                text: 'NY COVID-19 cases',
+                fontSize:25 
+            }
+        }
+
+
+    });
+
+    </script>
+
+
+
+
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  </body>
+</html>

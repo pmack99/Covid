@@ -1,0 +1,89 @@
+.nav-item {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+}
+
+* {
+  margin: 1px;
+  padding: 1px;
+  outline: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+.a {
+  font-family: 'Oswald', sans-serif;
+  font-size: 3rem;
+  margin-top: 2rem;
+}
+
+hr {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-width: 1px;
+}
+
+.container {
+  padding: 15px;
+}
+
+#usa tr:hover {
+  background-color: lightgrey;
+}
+#state tr:hover {
+  background-color: lightgrey;
+}
+#counties tr:hover {
+  background-color: lightgrey;
+}
+
+#countries_stat th {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  color: black;
+  height: 20px;
+}
+
+h5 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.3rem;
+}
+
+p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+}
+
+table {
+  padding: 20rem;
+  width: 100%;
+}
+
+/* th {
+  font-family: "Oswald", sans-serif;
+  align-items: center;
+  font-size: 1rem;
+} */
+
+.d {
+  height: 200px;
+  width: 100%;
+  font-size: 1rem;
+  overflow-y: scroll;
+}
+
+.e {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.chart {
+  padding: 40px;
+  padding-bottom: 20px;
+}
+
+.x {
+  padding-bottom: 20px;
+}

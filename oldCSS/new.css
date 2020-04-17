@@ -1,0 +1,117 @@
+
+*{
+    margin: 10;
+    padding: 20;
+    outline: 0;
+    font-family: 'Nunito',sans-serif;
+}
+
+
+
+.jumbotron{
+    padding:50px 40px 50px 40px;
+    margin-bottom:10px;
+    font-family: 'Oswald', sans-serif;
+    background-image: url(coronaBlack.png);
+    background-size: cover;
+  
+  }
+
+
+body{
+    background-color: black;
+    color: white;
+}
+
+#countries_stat td, #countries_stat th, #usa td, #usa th {
+    border: 2px solid #ddd;
+    padding: 10px;
+    
+  }
+  
+  
+  #countries_stat tr:hover {background-color: red;}
+  
+  #countries_stat th {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color:black;
+    color: red;
+    text-align: center;
+    height: 40px;
+  }
+
+
+  #countries_stat tr{
+
+    height: 20px;
+
+  }
+
+  #usa tr{
+
+    height: 20px;
+
+  }
+
+ 
+  
+  #usa tr:hover {background-color: red;}
+  
+  #usa th {
+    padding-top: 15px;
+    padding-bottom: 10px;
+    text-align: left;
+    background-color:black;
+    color: red;
+    text-align: center;
+    height: 40px;
+  }
+
+
+
+  table {
+    width: 100%;
+    overflow-y: auto;
+  }
+
+
+  .card-deck {
+    color: black;
+    
+  }
+
+  .a {
+    font-family: 'Oswald', sans-serif;
+    font-size: 5rem;
+    background-image: url(coronaBlack.png);
+
+  }
+
+
+  hr {
+    display: block;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 2em;
+    margin-right: 2em;
+    border-style: inset;
+    border-width: 1px;
+  }
+  
+  .c {
+    background: none;
+    border-radius: 1rem;
+    border-color: tomato;
+
+  }
+
+  .chart{
+    padding: 20px;
+    padding-top: 100px;
+    margin-top: auto;
+  }
+
+
+  

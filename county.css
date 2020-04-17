@@ -1,0 +1,66 @@
+.nav-item {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1rem;
+}
+
+* {
+  margin: 1px;
+  padding: 1px;
+  outline: 0;
+  font-family: 'Nunito', sans-serif;
+}
+
+hr {
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  border-width: 1px;
+  color: black;
+}
+
+.container {
+  padding: 1px;
+}
+
+h5 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  color: lightslategray;
+  margin: 1px;
+  padding: 1px;
+}
+
+p {
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.7rem;
+  margin-bottom: 15px;
+  color: black;
+  padding-left: 15px;
+}
+
+.e {
+  font-family: 'Oswald', sans-serif;
+  font-size: 2rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+.card-title {
+  margin-bottom: 0.2px;
+}
+
+.card-body {
+  height: 47rem;
+}
+
+.x {
+  padding-top: 3rem;
+  margin-top: 3rem;
+  font-size: 1rem;
+}
+
+.btn {
+  padding-left: 1rem;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+}
