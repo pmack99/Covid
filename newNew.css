@@ -37,6 +37,10 @@ hr {
   background-color: lightgrey;
 }
 
+#countries_stat tr:hover {
+  background-color: lightgrey;
+}
+
 #countries_stat th {
   padding-top: 1rem;
   padding-bottom: 1rem;
