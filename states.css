@@ -41,9 +41,8 @@ p {
 .e {
   font-family: 'Oswald', sans-serif;
   font-size: 2rem;
-  padding-bottom: 1rem;
-  padding-top: 1rem;
-  margin-top: 1px;
+  padding: 0rem;
+  margin-bottom: -2rem;
 }
 
 .card-title {
