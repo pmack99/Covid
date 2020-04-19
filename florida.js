@@ -83,6 +83,10 @@ let newChart = new Chart(flChart, {
       '4/12',
       '4/13',
       '4/14',
+      '4/15',
+      '4/16',
+      '4/17',
+      '4/18',
     ],
     datasets: [
       {
@@ -130,6 +134,10 @@ let newChart = new Chart(flChart, {
           19355,
           20601,
           21367,
+          22511,
+          22897,
+          24119,
+          25269,
         ],
 
         backgroundColor: 'green',
@@ -183,6 +191,10 @@ let newChart = new Chart(flChart, {
           465,
           483,
           537,
+          609,
+          646,
+          699,
+          754,
         ],
         type: 'line',
 
@@ -237,6 +249,10 @@ let newChart = new Chart(flChart, {
           2772,
           2833,
           3060,
+          3344,
+          3460,
+          3665,
+          3842,
         ],
         type: 'line',
 
