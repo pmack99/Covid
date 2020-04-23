@@ -4,8 +4,8 @@ let myChart = document.getElementById('myChart').getContext('2d')
 
 fetch('https://covidtracking.com/api/us/daily', {
   method: 'GET',
-}).then(response =>
-  response.json().then(data => {
+}).then((response) =>
+  response.json().then((data) => {
     console.log(data)
 
     for (let i = 0; i < data.length; i++) {
@@ -33,8 +33,8 @@ fetch('https://covidtracking.com/api/us/daily', {
 
 fetch('https://covidtracking.com/api/states', {
   method: 'GET',
-}).then(response =>
-  response.json().then(data => {
+}).then((response) =>
+  response.json().then((data) => {
     console.log(data)
 
     for (let i = 0; i < data.length; i++) {
@@ -116,6 +116,8 @@ let usaChart = new Chart(myChart, {
       '4/18',
       '4/19',
       '4/20',
+      '4/21',
+      '4/22',
     ],
     datasets: [
       {
@@ -170,6 +172,8 @@ let usaChart = new Chart(myChart, {
           722182,
           749203,
           772524,
+          799717,
+          826936,
         ],
 
         backgroundColor: 'green',
@@ -229,6 +233,8 @@ let usaChart = new Chart(myChart, {
           34139,
           35793,
           37321,
+          39995,
+          42103,
         ],
         type: 'line',
 
@@ -289,6 +295,8 @@ let usaChart = new Chart(myChart, {
           78839,
           80881,
           82879,
+          84292,
+          85465,
         ],
         type: 'line',
 

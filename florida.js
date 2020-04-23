@@ -4,8 +4,8 @@ let flChart = document.getElementById('flChart').getContext('2d')
 
 fetch('https://covidtracking.com/api/states/daily?state=FL', {
   method: 'GET',
-}).then(response =>
-  response.json().then(data => {
+}).then((response) =>
+  response.json().then((data) => {
     // console.log(data)
 
     //Getting all the state data using a loop
@@ -89,6 +89,9 @@ let newChart = new Chart(flChart, {
       '4/18',
       '4/19',
       '4/20',
+      '4/21',
+      ,
+      '4/22',
     ],
     datasets: [
       {
@@ -142,6 +145,8 @@ let newChart = new Chart(flChart, {
           25269,
           25996,
           26660,
+          27495,
+          28309,
         ],
 
         backgroundColor: 'green',
@@ -201,6 +206,8 @@ let newChart = new Chart(flChart, {
           754,
           781,
           806,
+          856,
+          910,
         ],
         type: 'line',
 
@@ -261,6 +268,8 @@ let newChart = new Chart(flChart, {
           3842,
           3930,
           4010,
+          4235,
+          4469,
         ],
         type: 'line',
 
@@ -289,8 +298,8 @@ fetch(
     method: 'GET',
   },
 )
-  .then(response =>
-    response.json().then(data => {
+  .then((response) =>
+    response.json().then((data) => {
       console.log(data)
       let counties = data.features
 
@@ -318,6 +327,6 @@ fetch(
       }
     }),
   )
-  .catch(err => {
+  .catch((err) => {
     console.log(err)
   })
