@@ -1,5 +1,5 @@
 //Decalring the Different Variable and Objects
-let state = document.getElementById('state')
+let state0 = document.getElementById('state0')
 let positive = document.getElementById('positive')
 let negative = document.getElementById('negative')
 let hospitalizedCurrently = document.getElementById('hospitalizedCurrently')
@@ -11,10 +11,10 @@ let totalTestResults = document.getElementById('totalTestResults')
 let lastUpdateEt = document.getElementById('lastUpdateEt')
 
 var selectedState
-var pick
 
 start()
 
+// sets up the dropdown
 function start() {
   let dropdown = document.getElementById('state')
   dropdown.length = 0
@@ -60,7 +60,7 @@ function myFunction() {
       response.json().then((data) => {
         console.log(data)
 
-        name.innerHTML = data.name
+        state0.innerHTML = data.state
         positive.innerHTML = data.positive
         negative.innerHTML = data.negative
         hospitalizedCurrently.innerHTML = data.hospitalizedCurrently
