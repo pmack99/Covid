@@ -23,8 +23,6 @@ let lastUpdateEt2 = document.getElementById('lastUpdateEt2')
 
 var selectedState
 var selectedState2
-var pick
-var pick2
 
 let dropdown = document.getElementById('state')
 dropdown.length = 0
@@ -35,7 +33,7 @@ defaultOption.text = 'Choose State/Province'
 dropdown.add(defaultOption)
 dropdown.selectedIndex = 0
 
-let dropdown2 = document.getElementById('state2')
+let dropdown2 = document.getElementById('state9')
 dropdown2.length = 0
 
 let defaultOption2 = document.createElement('option')
@@ -108,16 +106,16 @@ function start2() {
   fetch(url)
     .then(function (response) {
       // Examine the text in the response
-      response.json().then(function (data) {
-        let option
-        var selectedState2 = data
-        console.log(data)
+      response.json().then(function (data2) {
+        let option2
+        var selectedState2 = data2
+        console.log(selectedState2)
 
         for (let i = 0; i < selectedState2.length; i++) {
-          option = document.createElement('option')
-          option.text = selectedState2[i].name
-          option.value = selectedState2[i].state
-          dropdown.add(option)
+          option2 = document.createElement('option2')
+          option2.text = selectedState2[i].name
+          option2.value = selectedState2[i].state
+          dropdown2.add(option2)
         }
       })
     })
@@ -127,11 +125,11 @@ function start2() {
 }
 
 function myFunction2() {
-  var e2 = document.getElementById('state2')
-  var pick2 = e2.options[e2.selectedIndex].value
+  var e = document.getElementById('state9')
+  var pick = e.options[e.selectedIndex].value
 
   //Fetching the County Data
-  fetch('https://covidtracking.com//api/states?state=' + pick2, {
+  fetch('https://covidtracking.com//api/states?state=' + pick, {
     method: 'GET',
   })
     .then((response) =>
