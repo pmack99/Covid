@@ -107,15 +107,15 @@ function start2() {
     .then(function (response) {
       // Examine the text in the response
       response.json().then(function (data2) {
-        let option2
+        let option
         var selectedState2 = data2
         console.log(selectedState2)
 
         for (let i = 0; i < selectedState2.length; i++) {
-          option2 = document.createElement('option2')
-          option2.text = selectedState2[i].name
-          option2.value = selectedState2[i].state
-          dropdown2.add(option2)
+          option = document.createElement('option')
+          option.text = selectedState2[i].name
+          option.value = selectedState2[i].state
+          dropdown2.add(option)
         }
       })
     })
