@@ -120,6 +120,8 @@ let usaChart = new Chart(myChart, {
       '4/22',
       '4/23',
       '4/24',
+      '4/25',
+      '4/26',
     ],
     datasets: [
       {
@@ -178,6 +180,8 @@ let usaChart = new Chart(myChart, {
           826936,
           859318,
           890816,
+          931698,
+          959056,
         ],
 
         backgroundColor: 'green',
@@ -241,6 +245,8 @@ let usaChart = new Chart(myChart, {
           42103,
           44014,
           45786,
+          47980,
+          49164,
         ],
         type: 'line',
 
@@ -305,6 +311,8 @@ let usaChart = new Chart(myChart, {
           85465,
           91108,
           93107,
+          94743,
+          95810,
         ],
         type: 'line',
 
