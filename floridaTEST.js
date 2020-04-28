@@ -1,6 +1,8 @@
 let table = document.getElementById('usa')
 let table2 = document.getElementById('counties')
 let flChart = document.getElementById('flChart').getContext('2d')
+let dataSet = []
+let positiveD = []
 
 fetch('https://covidtracking.com/api/states/daily?state=FL', {
   method: 'GET',
@@ -10,7 +12,19 @@ fetch('https://covidtracking.com/api/states/daily?state=FL', {
 
     //Getting all the state data using a loop
     for (let i = 0; i < data.length; i++) {
-      console.log(data[i])
+      //   console.log(data[i])
+      //   console.log(data[i].date)
+      //   console.log(data[i].positive)
+      //   console.log(data[i].death)
+      //   console.log(data[i].hospitalized)
+
+      let dataSet = data[i].date
+      let positiveD = data[i].positive
+      console.log(dataSet)
+      console.log(positiveD)
+
+      //   data.push(labels)
+      //   console.log(labels)
 
       //we will start by inserting the new rows inside our table
       let row = table.insertRow(i + 1)
@@ -40,123 +54,11 @@ Chart.defaults.global.defaultFontColor = 'black'
 let newChart = new Chart(flChart, {
   type: 'bar',
   data: {
-    labels: [
-      '3/4',
-      '3/5',
-      '3/6',
-      '3/7',
-      '3/8',
-      '3/9',
-      '3/10',
-      '3/11',
-      '3/12',
-      '3/13',
-      '3/14',
-      '3/15',
-      '3/16',
-      '3/17',
-      '3/18',
-      '3/19',
-      '3/20',
-      '3/21',
-      '3/22',
-      '3/23',
-      '3/24',
-      '3/25',
-      '3/26',
-      '3/27',
-      '3/28',
-      '3/29',
-      '3/30',
-      '3/31',
-      '4/1',
-      '4/2',
-      '4/3',
-      '4/4',
-      '4/5',
-      '4/6',
-      '4/7',
-      '4/8',
-      '4/9',
-      '4/10',
-      '4/11',
-      '4/12',
-      '4/13',
-      '4/14',
-      '4/15',
-      '4/16',
-      '4/17',
-      '4/18',
-      '4/19',
-      '4/20',
-      '4/21',
-      '4/22',
-      '4/23',
-      '4/24',
-      '4/25',
-      '4/26',
-      '4/27',
-    ],
+    labels: dataSet,
     datasets: [
       {
         label: 'Positive',
-        data: [
-          2,
-          9,
-          9,
-          14,
-          17,
-          18,
-          19,
-          28,
-          32,
-          50,
-          77,
-          116,
-          141,
-          186,
-          314,
-          390,
-          520,
-          658,
-          830,
-          1171,
-          1412,
-          1682,
-          2355,
-          2765,
-          3763,
-          4246,
-          5473,
-          6338,
-          6955,
-          8010,
-          9585,
-          11111,
-          12151,
-          13324,
-          14747,
-          15455,
-          16364,
-          17531,
-          18494,
-          19355,
-          20601,
-          21367,
-          22511,
-          22897,
-          24119,
-          25269,
-          25996,
-          26660,
-          27495,
-          28309,
-          28832,
-          30174,
-          30839,
-          31528,
-          32138,
-        ],
+        data: positiveD,
 
         backgroundColor: 'green',
         borderWidth: 1,
@@ -221,7 +123,6 @@ let newChart = new Chart(flChart, {
           1031,
           1075,
           1094,
-          1101,
         ],
         type: 'line',
 
@@ -288,7 +189,6 @@ let newChart = new Chart(flChart, {
           4888,
           5045,
           5155,
-          5211,
         ],
         type: 'line',
 
@@ -323,7 +223,7 @@ fetch(
       let counties = data.features
 
       for (let i = 0; i < counties.length; i++) {
-        console.log(counties[i])
+        // console.log(counties[i])
 
         let row = table2.insertRow(i + 1)
         let County_1 = row.insertCell(0)
