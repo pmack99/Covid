@@ -1,8 +1,13 @@
 let table = document.getElementById('usa')
 let table2 = document.getElementById('counties')
 let flChart = document.getElementById('flChart').getContext('2d')
-let dataSet = []
-let positiveD = []
+let dataSet = {
+  date: [],
+  positive: [],
+}
+
+let pos1
+let date1
 
 fetch('https://covidtracking.com/api/states/daily?state=FL', {
   method: 'GET',
@@ -18,10 +23,12 @@ fetch('https://covidtracking.com/api/states/daily?state=FL', {
       //   console.log(data[i].death)
       //   console.log(data[i].hospitalized)
 
-      let dataSet = data[i].date
-      let positiveD = data[i].positive
-      console.log(dataSet)
-      console.log(positiveD)
+      let date1 = data[i].date
+      let pos1 = data[i].positive
+      dataSet.date.push(date1)
+      dataSet.positive.push(pos1)
+      console.log(date1)
+      console.log(pos1)
 
       //   data.push(labels)
       //   console.log(labels)
@@ -54,11 +61,11 @@ Chart.defaults.global.defaultFontColor = 'black'
 let newChart = new Chart(flChart, {
   type: 'bar',
   data: {
-    labels: dataSet,
+    labels: date1,
     datasets: [
       {
         label: 'Positive',
-        data: positiveD,
+        data: pos1,
 
         backgroundColor: 'green',
         borderWidth: 1,
@@ -219,7 +226,7 @@ fetch(
 )
   .then((response) =>
     response.json().then((data) => {
-      console.log(data)
+      // console.log(data)
       let counties = data.features
 
       for (let i = 0; i < counties.length; i++) {
