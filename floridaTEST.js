@@ -5,9 +5,10 @@ let dataSet = {
   date: [],
   positive: [],
 }
-
+let dataDate = []
 let pos1
 let date1
+let allData = []
 
 fetch('https://covidtracking.com/api/states/daily?state=FL', {
   method: 'GET',
@@ -23,15 +24,11 @@ fetch('https://covidtracking.com/api/states/daily?state=FL', {
       //   console.log(data[i].death)
       //   console.log(data[i].hospitalized)
 
-      let date1 = data[i].date
-      let pos1 = data[i].positive
-      dataSet.date.push(date1)
-      dataSet.positive.push(pos1)
-      console.log(date1)
+      const pos1 = data[i].positive
       console.log(pos1)
 
-      //   data.push(labels)
-      //   console.log(labels)
+      const dataDate = data[i].date
+      console.log(dataDate)
 
       //we will start by inserting the new rows inside our table
       let row = table.insertRow(i + 1)
@@ -61,7 +58,7 @@ Chart.defaults.global.defaultFontColor = 'black'
 let newChart = new Chart(flChart, {
   type: 'bar',
   data: {
-    labels: date1,
+    labels: dataDate,
     datasets: [
       {
         label: 'Positive',

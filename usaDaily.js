@@ -2,9 +2,12 @@ let table = document.getElementById('usa')
 let table2 = document.getElementById('state')
 let myChart = document.getElementById('myChart').getContext('2d')
 
-fetch('https://covidtracking.com/api/us/daily', {
-  method: 'GET',
-}).then((response) =>
+fetch(
+  'https://cors-anywhere.herokuapp.com/https://covidtracking.com/api/us/daily',
+  {
+    method: 'GET',
+  },
+).then((response) =>
   response.json().then((data) => {
     console.log(data)
 
