@@ -2,7 +2,7 @@ let table = document.getElementById('usa')
 let table2 = document.getElementById('counties')
 let flChart = document.getElementById('flChart').getContext('2d')
 
-fetch('https://covidtracking.com/api/states/daily?state=FL', {
+fetch('https://covidtracking.com/api/v1/states/FL/daily.json', {
   method: 'GET',
 }).then((response) =>
   response.json().then((data) => {
@@ -98,6 +98,9 @@ let newChart = new Chart(flChart, {
       '4/27',
       '4/28',
       '4/29',
+      '4/30',
+      '5/01',
+      '5/02',
     ],
     datasets: [
       {
@@ -160,6 +163,9 @@ let newChart = new Chart(flChart, {
           32138,
           32846,
           33193,
+          33690,
+          34728,
+          35463,
         ],
 
         backgroundColor: 'green',
@@ -228,6 +234,9 @@ let newChart = new Chart(flChart, {
           1101,
           1154,
           1240,
+          1290,
+          1314,
+          1388,
         ],
         type: 'line',
 
@@ -297,6 +306,9 @@ let newChart = new Chart(flChart, {
           5211,
           5266,
           5624,
+          5795,
+          5795,
+          5945,
         ],
         type: 'line',
 
