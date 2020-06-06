@@ -1,9 +1,9 @@
 let table = document.getElementById('usa')
 let table2 = document.getElementById('state')
-let myChart = document.getElementById('myChart').getContext('2d')
+// let myChart = document.getElementById('myChart').getContext('2d')
 
 fetch(
-  'https://cors-anywhere.herokuapp.com/https://covidtracking.com/api/us/daily',
+  'https://cors-anywhere.herokuapp.com/https://covidtracking.com/api/v1/us/daily.json',
   {
     method: 'GET',
   },

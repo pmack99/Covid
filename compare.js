@@ -69,12 +69,15 @@ function start() {
     })
 }
 
+// https://covidtracking.com/api/v1/states/ca/current.json
+
 function myFunction() {
   var e = document.getElementById('state')
   var pick = e.options[e.selectedIndex].value
+  var text1 = pick.toLowerCase()
 
   //Fetching the County Data
-  fetch('https://covidtracking.com//api/states?state=' + pick, {
+  fetch('https://covidtracking.com//api/v1/states/' + text1 + '/current.json', {
     method: 'GET',
   })
     .then((response) =>
@@ -125,11 +128,17 @@ function start2() {
 function myFunction2() {
   var e = document.getElementById('state9')
   var pick = e.options[e.selectedIndex].value
+  var text2 = pick.toLowerCase()
+
+  //covidtracking.com/api/v1/states/ca/current.json
 
   //Fetching the County Data
-  fetch('https://covidtracking.com//api/states?state=' + pick, {
-    method: 'GET',
-  })
+  https: fetch(
+    'https://covidtracking.com//api/v1/states/' + text2 + '/current.json',
+    {
+      method: 'GET',
+    },
+  )
     .then((response) =>
       response.json().then((data) => {
         console.log(data)

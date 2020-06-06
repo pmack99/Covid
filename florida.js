@@ -1,8 +1,8 @@
 let table = document.getElementById('usa')
 let table2 = document.getElementById('counties')
-let flChart = document.getElementById('flChart').getContext('2d')
+// let flChart = document.getElementById('flChart').getContext('2d')
 
-fetch('https://covidtracking.com/api/v1/states/FL/daily.json', {
+fetch('https://covidtracking.com/api/v1/states/fl/daily.json', {
   method: 'GET',
 }).then((response) =>
   response.json().then((data) => {
